@@ -4,6 +4,7 @@ body {
 }
 
 h1 {
+    color: #4c8492;
     font-size: 38px;
     font-weight: bold;
     line-height: 1.25;
@@ -20,6 +21,10 @@ li {
     padding: 0px;
 }
 
+hr {
+    border: 1px solid #f7e0a3;
+}
+
 footer {
     color: rgba(39, 33, 66, .4);
     font-size: 12px;
@@ -27,7 +32,7 @@ footer {
 }
 
 a {
-    color: #0881a3;
+    color: #4c8492;
 }
 
 .weather-app, .container {
@@ -45,20 +50,26 @@ a {
 
 .weather-overview {
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
-.main-temperature, .weather-emoji {
+.main-temperature, #icon {
     font-size: 50px;
     font-weight: bold;
+    margin-right: 8px;
 }
 
-.temperature-details, .units {
+.temperature-details, .units, #icon {
     position: relative;
 }
 
 .temperature-details {
     float: right;
-    top: 30px;
+    top: 40px;
+}
+
+#icon {
+    top: -15px;
 }
 
 .units {
