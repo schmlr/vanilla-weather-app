@@ -1,8 +1,13 @@
-small, .container {
+footer {
+    text-align: center;
+}
+
+.container {
     margin: 35px;
     max-width: 90%;
     padding: 25px;
 }
+
 .container {
     border: 1px solid none;
     border-radius: 15px;
