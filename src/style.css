@@ -27,12 +27,25 @@ hr {
 
 footer {
     color: rgba(39, 33, 66, .4);
+}
+
+#source-code {
+    color: #4c8492;
+}
+
+footer, #source-code {
     font-size: 12px;
     text-align: center;
 }
 
 a {
+    color: rgba(39, 33, 66, .4);
+    text-decoration: none;
+}
+
+a:hover {
     color: #4c8492;
+    text-decoration: none;
 }
 
 input[type=search] {
@@ -118,4 +131,11 @@ input[type=submit]:hover {
 
 #location:hover {
     opacity: 1;
+}
+
+.active {
+    color: #4c8492;
+    font-weight: bold;
+    cursor: default;
+    text-decoration: none;
 }

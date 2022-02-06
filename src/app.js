@@ -26,6 +26,8 @@ function displayTemperature(response) {
     let date = document.querySelector("#date");
     let weatherIcon = document.querySelector("#icon");
 
+    celsiusTemperature = response.data.main.temp;
+
     city.innerHTML = response.data.name;
     mainTemperature.innerHTML = Math.round(response.data.main.temp);
     weatherCondition.innerHTML = response.data.weather[0].description.charAt(0).toUpperCase() +
@@ -62,10 +64,35 @@ function triggerNavigator() {
     navigator.geolocation.getCurrentPosition(getCurrentCoordinates);
 }
 
-search("Berlin");
+function convertToFahrenheit(event) {
+    event.preventDefault();
+    let fahrenheitTemperature = Math.round((celsiusTemperature*9)/5 + 32);
+    let mainTemperature = document.querySelector("#main-temperature");
+    celsiusLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
+    mainTemperature.innerHTML = fahrenheitTemperature;
+}
+
+function convertToCelsius(event) {
+    event.preventDefault();
+    let mainTemperature = document.querySelector("#main-temperature");
+    celsiusLink.classList.add("active");
+    fahrenheitLink.classList.remove("active");
+    mainTemperature.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit)
 
 let currentLocationButton = document.querySelector("#location");
 currentLocationButton.addEventListener("click", triggerNavigator);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertToCelsius);
+
+search("Berlin");
