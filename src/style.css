@@ -1,6 +1,6 @@
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     background: #fffde8;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 h1 {
@@ -25,19 +25,6 @@ hr {
     border: 1px solid #f7e0a3;
 }
 
-footer {
-    color: rgba(39, 33, 66, .4);
-}
-
-#source-code {
-    color: #4c8492;
-}
-
-footer, #source-code {
-    font-size: 12px;
-    text-align: center;
-}
-
 a {
     color: rgba(39, 33, 66, .4);
     text-decoration: none;
@@ -54,57 +41,47 @@ input[type=search] {
     padding: 10px;
 }
 
-input[type=submit] {
+input[type=submit], input[type=submit]:hover {
     background-color: #f09c67; 
+}
+
+input[type=submit] {
     border: 1px solid #f09c67;
     opacity: 0.8;
     padding: 10px;
 }
 
-input[type=submit]:hover {
-    background-color: #f09c67; 
+input[type=submit]:hover, input[type=submit]::after {
     border: 1px solid #f09c67;
     opacity: 1;
 }
 
+footer {
+    color: rgba(39, 33, 66, .4);
+}
+
+footer, #source-code {
+    font-size: 12px;
+    text-align: center;
+}
+
 .weather-app, .container {
+    background: white;
     margin: 15px auto;
     padding: 25px;
-    background: white;
 }
 
 .container {
-    margin: 30px auto;
-    padding: 25px;
-    background: white;
     border: 1px solid none;
     border-radius: 15px;
     box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
+    margin: 30px auto;
     max-width: 60%;
 }
 
 .weather-overview {
     margin-bottom: 20px;
     margin-top: 20px;
-}
-
-.main-temperature, #icon {
-    font-size: 50px;
-    font-weight: bold;
-    margin-right: 8px;
-}
-
-.temperature-details, .units, #icon {
-    position: relative;
-}
-
-.temperature-details {
-    float: right;
-    top: 40px;
-}
-
-#icon {
-    top: -15px;
 }
 
 .units {
@@ -115,27 +92,49 @@ input[type=submit]:hover {
     font-size: 14px;
 }
 
-#search-form {
-    margin-bottom: 40px;
+.active {
+    color: #4c8492;
+    cursor: default;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.temperature-details {
+    float: right;
+    top: 40px;
+}
+
+.temperature-details, .units, #icon, #location {
+    position: relative;
+}
+
+.main-temperature, #icon {
+    font-size: 50px;
+    font-weight: bold;
+    margin-right: 8px;
 }
 
 #location {
-    font-size: 34px;
     background: none;
     border: none;
-    position: relative;
-    top: -7px;
+    font-size: 34px;
     left: -7px;
     opacity: 0.2;
+    top: -7px;
 }
 
 #location:hover {
     opacity: 0.5;
 }
 
-.active {
+#icon {
+    top: -15px;
+}
+
+#search-form {
+    margin-bottom: 40px;
+}
+
+#source-code {
     color: #4c8492;
-    font-weight: bold;
-    cursor: default;
-    text-decoration: none;
 }

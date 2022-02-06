@@ -13,7 +13,6 @@ function formatDate (timestamp) {
     if (minutes < 10) {
         minutes = `0${minutes}`;
     }
-
     return `${weekDay}, ${day}. ${month} | ${hours}:${minutes}`
 }
 
@@ -68,8 +67,8 @@ function convertToFahrenheit(event) {
     event.preventDefault();
     let fahrenheitTemperature = Math.round((celsiusTemperature*9)/5 + 32);
     let mainTemperature = document.querySelector("#main-temperature");
-    celsiusLink.classList.remove("active");
     fahrenheitLink.classList.add("active");
+    celsiusLink.classList.remove("active");
     mainTemperature.innerHTML = fahrenheitTemperature;
 }
 
