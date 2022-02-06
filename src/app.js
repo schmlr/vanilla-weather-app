@@ -38,7 +38,8 @@ function displayTemperature(response) {
 
 function search(city) {
     let apiKey = "f8dd335d654ee5ed88dd8c0c8485e037";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let units = "metric";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(displayTemperature)
 }
 
@@ -48,7 +49,23 @@ function handleSubmit(event) {
     search(cityInput.value);
 }
 
+function getCurrentCoordinates(position) {
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+    let apiKey = "f8dd335d654ee5ed88dd8c0c8485e037";
+    let units = "metric";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
+    axios.get(apiUrl).then(displayTemperature);
+  }
+
+function triggerNavigator() {
+    navigator.geolocation.getCurrentPosition(getCurrentCoordinates);
+}
+
 search("Berlin");
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit)
+
+let currentLocationButton = document.querySelector("#location");
+currentLocationButton.addEventListener("click", triggerNavigator);
