@@ -35,13 +35,35 @@ a {
     color: #4c8492;
 }
 
+input[type=search] {
+    background-color: #fffde8;
+    border: 1px solid #fffde8;
+    padding: 10px;
+}
+
+input[type=submit] {
+    background-color: #f09c67; 
+    border: 1px solid #f09c67;
+    opacity: 0.8;
+    padding: 10px;
+}
+
+input[type=submit]:hover {
+    background-color: #f09c67; 
+    border: 1px solid #f09c67;
+    opacity: 1;
+}
+
 .weather-app, .container {
-    margin: 30px auto;
+    margin: 15px auto;
     padding: 25px;
     background: white;
 }
 
 .container {
+    margin: 30px auto;
+    padding: 25px;
+    background: white;
     border: 1px solid none;
     border-radius: 15px;
     box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
@@ -80,10 +102,14 @@ a {
     font-size: 14px;
 }
 
-#city {
-
+#search-form {
+    margin-bottom: 40px;
 }
 
-#main-temperature {
-
+#location {
+    font-size: 34px;
+    background: none;
+    border: none;
+    position: relative;
+    top: -2px;
 }
