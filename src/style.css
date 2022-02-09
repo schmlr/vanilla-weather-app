@@ -68,7 +68,35 @@ footer, #source-code {
 .weather-app, .container {
     background: white;
     margin: 15px auto;
+    margin-bottom: 0px;
     padding: 25px;
+    padding-bottom: 15px;
+}
+
+.weather-forecast {
+    margin-left: 20px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.date {
+    color: rgba(39, 33, 66, .4);
+    font-size: 16px;
+    line-height: 2;
+}
+
+.forecast-temperature {
+    color: rgba(39, 33, 66, .4);
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.maximum-forecast-temperature {
+    font-weight: bold;
+}
+
+.forecast-icon {
+    width: 60px;
 }
 
 .container {
