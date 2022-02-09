@@ -101,23 +101,6 @@ function triggerNavigator() {
     navigator.geolocation.getCurrentPosition(getCurrentCoordinates);
 }
 
-function convertToFahrenheit(event) {
-    event.preventDefault();
-    let fahrenheitTemperature = Math.round((celsiusTemperature*9)/5 + 32);
-    let mainTemperature = document.querySelector("#main-temperature");
-    fahrenheitLink.classList.add("active");
-    celsiusLink.classList.remove("active");
-    mainTemperature.innerHTML = fahrenheitTemperature;
-}
-
-function convertToCelsius(event) {
-    event.preventDefault();
-    let mainTemperature = document.querySelector("#main-temperature");
-    celsiusLink.classList.add("active");
-    fahrenheitLink.classList.remove("active");
-    mainTemperature.innerHTML = Math.round(celsiusTemperature);
-}
-
 let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
@@ -125,12 +108,6 @@ form.addEventListener("submit", handleSubmit)
 
 let currentLocationButton = document.querySelector("#location");
 currentLocationButton.addEventListener("click", triggerNavigator);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", convertToFahrenheit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", convertToCelsius);
 
 search("Berlin");
 displayForecast();
