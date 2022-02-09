@@ -16,6 +16,29 @@ function formatDate (timestamp) {
     return `${weekDay}, ${day}. ${month} | ${hours}:${minutes}`
 }
 
+function displayForecast() {
+    let forecast = document.querySelector("#forecast");
+
+    let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
+
+    let forecastHTML = `<div class="row">`;
+    days.forEach(function(day) {
+    forecastHTML = forecastHTML + `
+    <div class="col-2">
+        <div class="date">${day}</div>
+        <div><img class="forecast-icon" src="https://openweathermap.org/img/wn/04n@2x.png"></div>
+        <div class="forecast-temperature">
+            <span class="maximum-forecast-temperature">18°</span> 
+            <span class="minimum-forecast-temperature">5°</span>
+            </div>
+        </div>`
+    }
+    );
+
+    forecastHTML = forecastHTML + `</div>`
+    forecast.innerHTML = forecastHTML;
+}
+
 function displayTemperature(response) {
     let city = document.querySelector("#city");
     let mainTemperature = document.querySelector("#main-temperature");
@@ -34,7 +57,7 @@ function displayTemperature(response) {
     humidity.innerHTML = response.data.main.humidity;
     wind.innerHTML = Math.round(response.data.wind.speed);
     date.innerHTML = formatDate(response.data.dt * 1000);
-    weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 function search(city) {
@@ -95,3 +118,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
 
 search("Berlin");
+displayForecast();
