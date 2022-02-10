@@ -70,7 +70,10 @@ function displayTemperature(response) {
                                 + response.data.weather[0].description.slice(1);
     humidity.innerHTML = response.data.main.humidity;
     wind.innerHTML = Math.round(response.data.wind.speed);
-    date.innerHTML = formatDate(response.data.dt * 1000);
+
+    let offset = new Date().getTimezoneOffset()*60;
+    date.innerHTML = formatDate((response.data.dt + response.data.timezone + offset) * 1000);
+
     weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
     getForecast(response.data.coord);    
