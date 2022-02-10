@@ -15,41 +15,40 @@
         <form id="search-form">
             <div class="row">
                 <div class="col-8">
-            <input type="search" placeholder="Search city ..." class="form-control" id="city-input" autocomplete="off"/>
-        </div>
-        <div class="col-3">
-            <input type="submit" value="Search" class="btn btn-primary w-100">
-        </div>
-        <div class="col-1 location">
-            <button id="location" title="Use current location">📍</button>
-        </div>
+                <input type="search" placeholder="Search city ..." class="form-control" id="city-input" autocomplete="off"/>
+                </div>
+                <div class="col-3">
+                <input type="submit" value="Search" class="btn btn-primary w-100 shadow-none">
+                </div>
+                <div class="col-1 location">
+                <button id="location" title="Use current location">📍</button>
+            </div>
         </form>
     </div>
-    <hr>
-    <div class="row">
-    <div class="col-6">
+<hr>
+<div class="row">
+<div class="col-6">
     <div class="weather-overview">
         <h1 id="city"></h1>
-    <ul class="basic-weather-info">
-        <li> <span id="date"></li>
-        <li id="conditions"></li>
-        <li>Humidity: <span id="humidity"></span>% | Wind: <span id="wind"></span>km/h</li>
-    </ul>
+        <ul class="basic-weather-info">
+            <li> <span id="date"></li>
+            <li id="conditions"></li>
+            <li>Humidity: <span id="humidity"></span>% | Wind: <span id="wind"></span>km/h</li>
+        </ul>
+    </div>
 </div>
-    </div>
-    <div class="col-6">
-    <span class="temperature-details">
-    <span><img id="icon" src="" width="100"></img></span><span class="main-temperature" id="main-temperature"></span><span class="units">°C</span>
+<div class="col-6">
+<span class="temperature-details">
+<span><img id="icon" src="" width="100"></img></span><span class="main-temperature" id="main-temperature"></span><span class="units">°C</span>
 </span>
-    </div>
+</div>
 </div>
 <hr>
+<div class="weather-forecast" id="forecast"></div>
 </div>
-<div class="weather-forecast" id="forecast">
-
-</div>
-</div>
-<footer>This project was coded by Laura Schum, is <a href="https://github.com/schmlr/vanilla-weather-app" target="_blank">open-sourced on GitHub</a> and <a href="https://agitated-almeida-fedb1e.netlify.app/" target="_blank">hosted on Netflify</a>.</footer>
+<footer>
+    This project was coded by Laura Schum, is <a href="https://github.com/schmlr/vanilla-weather-app" target="_blank">open-sourced on GitHub</a> and <a href="https://agitated-almeida-fedb1e.netlify.app/" target="_blank">hosted on Netflify</a>.
+    </footer>
 <script src="src/app.js"></script>
 </body>
 </html>
